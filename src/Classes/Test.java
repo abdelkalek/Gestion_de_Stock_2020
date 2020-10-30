@@ -1,8 +1,6 @@
 package Classes;
-
 import Controleur.Conrtoleur_Categorie;
 import Controleur.ControleurArticle;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
