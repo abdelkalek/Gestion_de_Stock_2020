@@ -10,10 +10,11 @@ import lombok.ToString;
 @Data
 @ToString
 public class Article {
-    private Categorie c;
+
     private int id ;
     private String  designation ;
     private String    description ;
+    private int qte;
 
 
 

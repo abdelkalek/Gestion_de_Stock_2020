@@ -40,8 +40,8 @@
             </constraints>
             <properties>
               <background color="-1"/>
-              <font name="Fira Code" size="18" style="0"/>
-              <foreground color="-16742212"/>
+              <font name="Calibri Light" size="18" style="0"/>
+              <foreground color="-13816531"/>
             </properties>
           </component>
           <component id="e8055" class="javax.swing.JLabel">
@@ -63,7 +63,8 @@
               <gridbag weightx="0.0" weighty="0.0"/>
             </constraints>
             <properties>
-              <font name="Fira Code" size="18" style="0"/>
+              <font name="Calibri Light" size="18" style="0"/>
+              <foreground color="-13816531"/>
             </properties>
           </component>
           <vspacer id="e1af5">
@@ -135,21 +136,10 @@
               <text value=""/>
             </properties>
           </component>
-          <component id="52d92" class="javax.swing.JLabel" binding="Lbl_msgCon">
-            <constraints>
-              <grid row="5" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-              <gridbag weightx="0.0" weighty="0.0"/>
-            </constraints>
-            <properties>
-              <font name="Ubuntu Medium" size="14"/>
-              <foreground color="-85248"/>
-              <text value="Votre Login et / ou Mot de passe est Incorrect"/>
-            </properties>
-          </component>
-          <vspacer id="93c51">
+          <vspacer id="3e058">
             <constraints>
               <grid row="7" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
-              <gridbag weightx="0.0" weighty="0.0" ipady="40"/>
+              <gridbag weightx="0.0" weighty="0.0"/>
             </constraints>
           </vspacer>
         </children>

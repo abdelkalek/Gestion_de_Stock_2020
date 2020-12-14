@@ -17,11 +17,10 @@ public  class Auth extends  JFrame{
     private JButton Bnt_Connecter;
     private JLabel lbl1;
     private JLabel lbl2;
-    public static JLabel Lbl_msgCon;
+
 
     public Auth()
 {
-
 
     try {
         UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
@@ -48,18 +47,28 @@ public  class Auth extends  JFrame{
         @SneakyThrows
         @Override
         public void actionPerformed(ActionEvent e) {
+             Contorleur_USER CU = new Contorleur_USER();
+            if( CU.connecter(new user("0",JTF_Login.getText(),String.valueOf(Jpwd.getPassword()))))
+            {
+                System.out.println("bien");
+                Stock s = new Stock();
+                dispose();
 
-            new Contorleur_USER().connecter(new user("asa",JTF_Login.getText(),String.valueOf(Jpwd.getPassword())));
+            }
+            else
+            {
+                JOptionPane.showMessageDialog( new  JFrame() ,"Your login name or password is invalid Try Again","Verification",JOptionPane.WARNING_MESSAGE);
+                System.out.println("rien");
+            }
             //setVisible(false); //you can't see me!
-        //Destroy the JFrame object
-            //dispose();
-
+        //Destroy the JFrame object dispose();
 
 
 
         }
     });
 }
+
     public static void main(String[] args) {
 
         Auth a = new Auth();
