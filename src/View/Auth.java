@@ -33,14 +33,12 @@ public  class Auth extends  JFrame{
     } catch (UnsupportedLookAndFeelException e) {
         e.printStackTrace();
     }
-
     setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("icon.png")));
     lbl1.setIcon(new ImageIcon("C:\\Users\\abdel\\IdeaProjects\\Gestion_de_Stock_2020\\src\\View\\user.png"));
     lbl2.setIcon(new ImageIcon("C:\\Users\\abdel\\IdeaProjects\\Gestion_de_Stock_2020\\src\\View\\k1.png"));
-
     setContentPane(mainPanel);
     setVisible(true);
-    setSize(new Dimension(660,500));
+    setSize(new Dimension(660,550));
     setResizable(false);
     setLocationRelativeTo(null);
     Bnt_Connecter.addActionListener(new ActionListener() {
@@ -48,30 +46,20 @@ public  class Auth extends  JFrame{
         @Override
         public void actionPerformed(ActionEvent e) {
              Contorleur_USER CU = new Contorleur_USER();
-            if( CU.connecter(new user("0",JTF_Login.getText(),String.valueOf(Jpwd.getPassword()))))
+            if( CU.connecter(new user(JTF_Login.getText(),String.valueOf(Jpwd.getPassword()))))
             {
                 System.out.println("bien");
                 Stock s = new Stock();
                 dispose();
-
             }
             else
             {
                 JOptionPane.showMessageDialog( new  JFrame() ,"Your login name or password is invalid Try Again","Verification",JOptionPane.WARNING_MESSAGE);
-                System.out.println("rien");
             }
-            //setVisible(false); //you can't see me!
-        //Destroy the JFrame object dispose();
-
-
-
         }
     });
 }
-
     public static void main(String[] args) {
-
         Auth a = new Auth();
-
     }
 }

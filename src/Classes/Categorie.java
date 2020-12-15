@@ -9,6 +9,6 @@ import lombok.NoArgsConstructor;
 public class Categorie {
  private  int id ;
  private String desigantion ;
- private String    description ;
+ private String   Nomc ;
 
 }
