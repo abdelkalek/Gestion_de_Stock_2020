@@ -4,7 +4,7 @@ import ConfigApp.MyStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 public class Contorleur_USER {
-    public boolean connecter(user u) throws SQLException {
+    public boolean connecter(user u)  {
             try {
                 ResultSet rset = new MyStatement().exeQuery("SELECT COUNT(*) FROM users where login='"+u.getLogin()+"'  and password='"+u.getPassword()+"'");
                 rset.next();

@@ -16,7 +16,6 @@ import java.util.Scanner;
     public class ControleurArticle {
     public DefaultTableModel mTableModel;
     public DefaultComboBoxModel mComboBox;
-    //// Fin Model de Connexion to My DATA //
    public void remplirComboArtcile_Cate()  {
         try {
             String sql = "SELECT NOM_CATEGORIE FROM categories ";
@@ -41,9 +40,7 @@ import java.util.Scanner;
             mTableModel = new DefaultTableModel(columnNames, 0);
             Object[] rows;
             while (rset.next()) {
-                // add the values to the temporary row
                 rows = new Object[]{rset.getInt(1), rset.getString(2), rset.getString(3), rset.getInt(4)};
-                // add the temp row to the table
                 mTableModel.addRow(rows);
             }
         } catch (Exception Ex) {
@@ -51,7 +48,7 @@ import java.util.Scanner;
 
         }
     }
-   public void Ajouter(  Article a)  {
+   public void Ajouter(Article a)  {
         // Create DataSource and connect to the local database
         try {
             String sql = "SELECT MAX(REF_PRODUIT) FROM Article";
@@ -69,7 +66,7 @@ import java.util.Scanner;
 
         }
     }
-    public void Supprimer(int n ) {
+    public void Supprimer(int n) {
         // Create DataSource and connect to the local database
         try {
             // modifier  un Article avec update

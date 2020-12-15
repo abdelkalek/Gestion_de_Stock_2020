@@ -18,7 +18,6 @@ public  class Auth extends  JFrame{
     private JLabel lbl1;
     private JLabel lbl2;
 
-
     public Auth()
 {
 
