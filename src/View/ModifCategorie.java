@@ -23,7 +23,7 @@ public class ModifCategorie extends JFrame {
       setIconImage(Toolkit.getDefaultToolkit().getImage("src/View/Icons/conf.png"));
       setContentPane(Mainpane);
       setVisible(true);
-      setSize(new Dimension(450,300));
+      setSize(new Dimension(650,450));
       setResizable(false);
       setLocationRelativeTo(null);
       Bnt_Modifier_Categorie.addActionListener(new ActionListener() {

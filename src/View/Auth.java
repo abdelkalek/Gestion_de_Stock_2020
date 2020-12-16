@@ -3,7 +3,6 @@ package View;
 import Classes.user;
 import Controleur.Contorleur_USER;
 import lombok.SneakyThrows;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -37,9 +36,10 @@ public  class Auth extends  JFrame{
     lbl2.setIcon(new ImageIcon("C:\\Users\\abdel\\IdeaProjects\\Gestion_de_Stock_2020\\src\\View\\k1.png"));
     setContentPane(mainPanel);
     setVisible(true);
-    setSize(new Dimension(660,550));
+    setSize(new Dimension(660,600));
     setResizable(false);
     setLocationRelativeTo(null);
+    setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     Bnt_Connecter.addActionListener(new ActionListener() {
         @SneakyThrows
         @Override
@@ -47,7 +47,6 @@ public  class Auth extends  JFrame{
              Contorleur_USER CU = new Contorleur_USER();
             if( CU.connecter(new user(JTF_Login.getText(),String.valueOf(Jpwd.getPassword()))))
             {
-                System.out.println("bien");
                 Stock s = new Stock();
                 dispose();
             }

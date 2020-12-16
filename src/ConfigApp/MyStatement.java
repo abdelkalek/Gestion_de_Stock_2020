@@ -6,6 +6,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 public class MyStatement {
     MyConnexion mc = MyConnexion.getInstance();
+
+
     public boolean exeUpdate(String sql){
         try {
             Statement statement = mc.getConnection().createStatement();
@@ -15,6 +17,8 @@ public class MyStatement {
             return false;
         }
     }
+
+
     public ResultSet exeQuery(String sql){
         try {
 

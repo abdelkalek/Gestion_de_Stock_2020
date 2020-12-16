@@ -36,6 +36,7 @@ public  class Stock extends JFrame {
     private JLabel Lbl_cherCategorie;
     ControleurArticle cA = new ControleurArticle();
     Conrtoleur_Categorie CC = new Conrtoleur_Categorie();
+
     public void Onlaod(){
   try {
         UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
@@ -53,7 +54,9 @@ public  class Stock extends JFrame {
     setVisible(true);
     setSize(new Dimension(1200, 700));
     setResizable(false);
-    setLocationRelativeTo(null);}
+    setLocationRelativeTo(null);
+
+    }
     public void ChargerTables() throws SQLException {
          setIconImage(Toolkit.getDefaultToolkit().getImage("src/View/Icons/stk.png"));
          Lbl_stock.setIcon(new ImageIcon("src/View/Icons/mar.png"));
@@ -70,6 +73,9 @@ public  class Stock extends JFrame {
          CC.chargerCategorie();
          Table_Categorie.setModel(CC.mTableModel);
      }
+
+
+
     public Stock() throws SQLException {
         Onlaod();
         ChargerTables();
@@ -117,22 +123,22 @@ public  class Stock extends JFrame {
                     return;
                 }
                 String ref = table_Article.getModel().getValueAt(row, 0).toString();
-                String desc = table_Article.getModel().getValueAt(row, 2).toString();
                 String desg = table_Article.getModel().getValueAt(row, 1).toString();
+                String desc = table_Article.getModel().getValueAt(row, 2).toString();
                 String qte = table_Article.getModel().getValueAt(row, 3).toString();
+
                 ModifARTICLE mo = new ModifARTICLE();
                 mo.Myref = Integer.parseInt(ref);
                 mo.Txt_Desc.setText(desc);
                 mo.Txt_Desg.setText(desg);
                 mo.Txt_QTE.setText(qte);
-
                 mo.setVisible(true);
                 mo.addWindowListener(new java.awt.event.WindowAdapter() {
                     @SneakyThrows
                     @Override
                     public void windowClosed(java.awt.event.WindowEvent windowEvent) {
-                        cA.chargerArticle();
-                        table_Article.setModel(cA.mTableModel);
+                     cA.chargerArticle();
+                     table_Article.setModel(cA.mTableModel);
                     }
                 });
 
@@ -158,6 +164,7 @@ public  class Stock extends JFrame {
 
             }
         });
+
         Txt_Chercher.addKeyListener(new KeyAdapter() {
             @SneakyThrows
             @Override

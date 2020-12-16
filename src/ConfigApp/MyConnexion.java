@@ -8,7 +8,7 @@ import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class MyConnexion {
+public class MyConnexion extends JFrame{
 
     private OracleDataSource ods ;
     private static Connection connection;

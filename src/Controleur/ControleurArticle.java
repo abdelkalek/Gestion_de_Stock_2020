@@ -32,16 +32,18 @@ import java.util.Scanner;
 
         }
     }
+    //Charger Table Article
     public void chargerArticle(){
         try {
             String sql = "SELECT * FROM Article";
             ResultSet rset = new MyStatement().exeQuery(sql);
+            //header of Table
             Object columnNames[] = {"Ref", "DESIGNATION", " DESCRIPTION", "QTE"};
             mTableModel = new DefaultTableModel(columnNames, 0);
-            Object[] rows;
+            Object[] row;
             while (rset.next()) {
-                rows = new Object[]{rset.getInt(1), rset.getString(2), rset.getString(3), rset.getInt(4)};
-                mTableModel.addRow(rows);
+                row = new Object[]{rset.getInt(1), rset.getString(2), rset.getString(3), rset.getInt(4)};
+                mTableModel.addRow(row);
             }
         } catch (Exception Ex) {
             System.out.println("Erreur  Connection :" + Ex.getMessage());
@@ -59,11 +61,9 @@ import java.util.Scanner;
             // Ajouter un Article
             System.out.println(a.getId()+","+a.getDesignation()+","+a.getDescription()+","+a.getQte());
        new  MyStatement().exeUpdate("insert into Article values("+a.getId()+",'"+a.getDesignation()+"','"+a.getDescription()+"',"+a.getQte()+")");
-
         }catch (Exception Ex )
         {
             System.out.println("Erreur  Connection :"+Ex.getMessage());
-
         }
     }
     public void Supprimer(int n) {
@@ -79,18 +79,10 @@ import java.util.Scanner;
         System.out.println("Article Supprimer Ok" );
     }
     public void ChercherArticle(String chaine){
-
         try {
-           ResultSet rset=  new MyStatement().exeQuery("SELECT * FROM Article where DESIGNATION like '%"+chaine+"%' or DESCRIPTION like '%"+chaine+"%'");
-            // 2 dimension array to hold table contents
-            // it holds temp values for now
-            Object rowData[][] = {{"Row1-Column1", "Row1-Column2", "Row1-Column3","row4"}};
-            // array to hold column names
+            ResultSet rset=  new MyStatement().exeQuery("SELECT * FROM Article where DESIGNATION like '%"+chaine+"%' or DESCRIPTION like '%"+chaine+"%'");
             Object columnNames[] = {"Ref",  "DESIGNATION", " DESCRIPTION","QTE"};
-            // create a table model and table based on it
-            mTableModel  = new DefaultTableModel(rowData, columnNames);
-            // remove the temp row
-            mTableModel.removeRow(0);
+            mTableModel  = new DefaultTableModel(columnNames,0);
             Object[] rows;
             while (rset.next())
             {
