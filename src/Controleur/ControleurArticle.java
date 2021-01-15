@@ -50,7 +50,7 @@ import java.util.Scanner;
 
         }
     }
-   public void Ajouter(Article a)  {
+    public void Ajouter(Article a)  {
         // Create DataSource and connect to the local database
         try {
             String sql = "SELECT MAX(REF_PRODUIT) FROM Article";

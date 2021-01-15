@@ -46,7 +46,6 @@ public class ModifARTICLE  extends JFrame{
                     {
                         in= false;
                     }
-
                     if(Txt_Desc.getText().isEmpty()|| Txt_Desg.getText().isEmpty() || in== false ){
                         JOptionPane.showMessageDialog( new  JFrame() ,"Empty Value Or incorrect type ","Verification of Data",JOptionPane.WARNING_MESSAGE);
                         return;
@@ -59,6 +58,8 @@ public class ModifARTICLE  extends JFrame{
                 /* Close the result set, statement, and the connection */
                 JOptionPane.showMessageDialog( new  JFrame() ,"Article Modifier avec  succès ","Modification Notice",JOptionPane.INFORMATION_MESSAGE);
                 System.out.println("Form Modifier Ok" );
+
+
                 dispose();
             }
 

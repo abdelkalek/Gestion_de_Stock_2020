@@ -98,10 +98,13 @@ public  class Stock extends JFrame {
                     JOptionPane.showMessageDialog(new JFrame(), "Empty Value Or incorrect type of data ", "Verification of Data", JOptionPane.WARNING_MESSAGE);
                     return;
                 }
+
                 Article A = new Article();
                         A.setDescription(des);
                         A.setDesignation(deg);
                         A.setQte(Integer.parseInt(qt));
+
+
                 ControleurArticle Ca = new ControleurArticle();
                 Ca.Ajouter(A);
                 System.out.println("donner envoyer");
@@ -133,6 +136,9 @@ public  class Stock extends JFrame {
                 mo.Txt_Desg.setText(desg);
                 mo.Txt_QTE.setText(qte);
                 mo.setVisible(true);
+
+
+
                 mo.addWindowListener(new java.awt.event.WindowAdapter() {
                     @SneakyThrows
                     @Override
@@ -156,7 +162,9 @@ public  class Stock extends JFrame {
                 ControleurArticle c = new ControleurArticle();
                 try {
                     c.Supprimer(ref);
+
                     cA.chargerArticle();
+
                     table_Article.setModel(cA.mTableModel);
                 } catch (Exception ex) {
                     System.out.println(" Erreur delete ");
